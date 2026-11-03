@@ -50,11 +50,13 @@
   height: 100%;
   display: block;
   opacity: 0;
-  transition: opacity .8s;
+  transform: scale(.9);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .stage.on canvas {
   opacity: 1;
+  transform: scale(1);
 }
 
 .pulse {
@@ -89,5 +91,38 @@
   100% {
     clip-path: inset(-10px 0 -10px 0);
     opacity: 0;
+  }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideLeft {
+  from { opacity: 0; transform: translateX(-32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeSlideRight {
+  from { opacity: 0; transform: translateX(32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.reveal-nav    { animation: fadeSlideUp .6s ease-out both; }
+.reveal-title  { animation: fadeSlideLeft .7s ease-out .15s both; }
+.reveal-stage  { animation: fadeSlideRight .7s ease-out .15s both; }
+.reveal-pulse  { animation: fadeSlideUp .6s ease-out .45s both; }
+.reveal-footer { animation: fadeSlideUp .6s ease-out .6s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-nav, .reveal-title, .reveal-stage, .reveal-pulse, .reveal-footer {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .stage canvas {
+    transition: opacity .3s;
+    transform: none;
   }
 }
