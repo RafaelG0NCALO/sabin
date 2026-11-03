@@ -1,0 +1,175 @@
+:root {
+  --red: #ff2e2e;
+  --pink: #fa97f1;
+  --cream: #ffebda;
+  --ink: #1b1b1b;
+  --pad: clamp(20px, 4.5vw, 56px);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: Figtree, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.grid{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,46,46,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(255,46,46,.14) 1px,transparent 1px);
+  background-size:72px 72px;
+  -webkit-mask-image:radial-gradient(ellipse at 50% 45%,#000 25%,transparent 85%);
+  mask-image:radial-gradient(ellipse at 50% 45%,#000 25%,transparent 85%)
+}
+
+section{
+  height: 100svh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: clamp(6px, 2svh, 32px);
+  padding: clamp(10px, 2.5svh, 28px) var(--pad);
+  overflow: hidden;
+}
+
+nav{
+  width: 100%;
+  max-width: 1200px;
+  flex: 0 0 auto;
+}
+
+nav h1{
+  color: var(--red);
+  font-weight: bold;
+  font-size: clamp(1.1rem, 1.4vw + 2svh, 2rem);
+  line-height: 1.15;
+}
+
+.footer-hero{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(8px, 2vw, 24px);
+  width: 100%;
+  max-width: 1200px;
+  flex: 0 0 auto;
+  font-size: clamp(.75rem, .5vw + 1.4svh, 1rem);
+}
+
+.hero{
+  width: 100%;
+  max-width: 1200px;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+}
+
+.wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap-reverse;
+  width: 100%;
+}
+
+.title {
+  flex: 1 1 max(220px, 25vw);
+  font-weight: 900;
+  color: var(--red);
+  font-size: clamp(1.7rem, 4.5vw + 5svh, 6.6rem);
+  line-height: .9;
+  letter-spacing: -.045em;
+}
+
+.title span {
+  display: block;
+  text-wrap: nowrap;
+}
+
+.title em {
+  font-style: normal;
+  color: var(--ink);
+  background: linear-gradient(transparent 62%, var(--pink) 62% 92%, transparent 92%);
+  padding-right: .12em;
+}
+
+.stage {
+  flex: 1 1 280px;
+  width: clamp(100px, min(38vw, 32svh), 420px);
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  padding: clamp(4px, 1svh, 10px);
+  margin: 0 auto;
+}
+
+.stage canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  transition: opacity .8s;
+}
+
+.stage.on canvas {
+  opacity: 1;
+}
+
+.pulse {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -15%;
+  width: 100%;
+  height: clamp(36px, 10svh, 90px);
+  transform: translateY(-50%);
+  z-index: 2;
+  overflow: visible;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.pulse path {
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.pulse {
+  animation: draw 3s linear infinite;
+}
+
+@keyframes draw {
+  0% {
+    clip-path: inset(-10px 100% -10px 0);
+    opacity: 1;
+  }
+  73% {
+    clip-path: inset(-10px 0 -10px 0);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(-10px 0 -10px 0);
+    opacity: 0;
+  }
+}

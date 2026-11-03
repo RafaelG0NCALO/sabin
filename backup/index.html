@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <section>
+  <div class="grid"></div>
+    <nav>
+      <h1>Instituto </br>Sabin</h1>
+    </nav>
+
+    <div class="hero" data-component="hero">
+      <div class="wrap">
+          <h1 class="title">
+            <span>Relatório de</span>
+            <span>atividades</span>
+            <span><em>2025</em></span>
+          </h1>
+
+          <div class="stage" id="stage"><canvas id="c" aria-label="Símbolo do Instituto Sabin em 3D"></canvas></div>
+        
+          <svg class="pulse" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+            <path pathLength="1" d="M0 50 H700 L714 50 L726 14 L742 92 L756 36 L766 52 H1000" />
+          </svg>
+      </div> 
+    </div>
+    <div class="footer-hero">
+      <p>Esta página é uma versão resumida do Relatório de Atividades.</p>
+      <button>Ver números</button>
+    </div>
+  </section>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/SVGLoader.js"></script>
+<script src="hero-3d.js"></script>
+</body>
+</html>

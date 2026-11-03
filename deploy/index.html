@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body class="bg-[var(--cream)]">
+  <div class="grid2"></div>
+  <section class="w-full p-4 h-screen grid max-w-7xl mx-auto" >
+      
+    <nav class="flex">
+      <h1 class="w-1/2 text-[var(--red)] font-bold text-xl leading-5">Instituto </br>Sabin</h1>
+      <p class="w-1/2 text-end">Relatório Anual</p>
+    </nav>
+
+    <div class="col-span-1 items-center grid grid-cols-2 max-[800px]:grid-cols-1 ">
+      <div class="max-[800px]:order-2">
+         <h1 class="title">
+            <span>Relatório de</span>
+            <span>atividades</span>
+            <span><em>2026</em></span>
+          </h1>
+      </div>
+      <div class="max-[800px]:order-1 flex justify-center">
+         <div class="stage max-[800px]:max-w-3/4" id="stage"><canvas id="c" aria-label="Símbolo do Instituto Sabin em 3D"></canvas></div>
+      </div>
+    </div>
+
+     <div>
+        <svg class="pulse" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+          <path pathLength="1" d="M0 50 H700 L714 50 L726 14 L742 92 L756 36 L766 52 H1000" />
+        </svg>
+      </div>
+
+    <div class="flex lg:pb-10">
+      <p class="lg:w-1/4">
+        Esta página é uma versão resumida do Relatório de Atividades.
+      </p>
+      <div class="flex justify-end w-full">
+        <button class="bg-[var(--red)] h-12 px-6 rounded-full font-bold text-[var(--cream)]">
+          Ver números
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+  <section></section>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/SVGLoader.js"></script>
+  <script src="hero-3d.js"></script>
+</body>
+</html>

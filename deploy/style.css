@@ -1,0 +1,92 @@
+:root {
+  --red: #ff2e2e;
+  --pink: #fa97f1;
+  --cream: #ffebda;
+  --ink: #1b1b1b;
+  --pad: clamp(20px, 4.5vw, 56px);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.grid2{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,46,46,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(255,46,46,.14) 1px,transparent 1px);
+  background-size:72px 72px;
+  -webkit-mask-image:radial-gradient(ellipse at 50% 45%,#000 25%,transparent 85%);
+  mask-image:radial-gradient(ellipse at 50% 45%,#000 25%,transparent 85%)
+}
+
+.title {
+  flex: 1 1 max(220px, 25vw);
+  font-weight: 900;
+  color: var(--red);
+  font-size: clamp(1.7rem, 4.5vw + 5svh, 6.6rem);
+  line-height: .9;
+  letter-spacing: -.045em;
+}
+
+.title span {
+  display: block;
+  text-wrap: nowrap;
+}
+
+.title em {
+  font-style: normal;
+  color: var(--ink);
+  background: linear-gradient(transparent 62%, var(--pink) 62% 92%, transparent 92%);
+  padding-right: .12em;
+}
+
+.stage {
+  width: 100%;
+  padding: clamp(4px, 1svh, 10px);
+}
+
+.stage canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  transition: opacity .8s;
+}
+
+.stage.on canvas {
+  opacity: 1;
+}
+
+.pulse {
+  width: 100%;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.pulse path {
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.pulse {
+  animation: draw 3s linear infinite;
+}
+
+@keyframes draw {
+  0% {
+    clip-path: inset(-10px 100% -10px 0);
+    opacity: 1;
+  }
+  73% {
+    clip-path: inset(-10px 0 -10px 0);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(-10px 0 -10px 0);
+    opacity: 0;
+  }
+}
