@@ -23,7 +23,7 @@
   flex: 1 1 max(220px, 25vw);
   font-weight: 900;
   color: var(--red);
- font-size: clamp(1.7rem, 4.5vw + 5svh, 6.6rem);
+  font-size: clamp(1.7rem, 4.5vw + 5svh, 6.6rem);
   line-height: .9;
   letter-spacing: -.045em;
 }
