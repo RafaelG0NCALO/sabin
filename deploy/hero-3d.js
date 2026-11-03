@@ -53,7 +53,6 @@
     });
 
     var clock = new THREE.Clock();
-    stage.classList.add("on");
     (function loop() {
       requestAnimationFrame(loop);
       var t = clock.getElapsedTime();
